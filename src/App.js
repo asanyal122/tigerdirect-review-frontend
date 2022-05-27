@@ -1,26 +1,9 @@
-import RatingComponent from "./components/RatingComponent";
-import data from "./static/data"
-import styled from "styled-components"
-import RatingsComponent from "./components/RatingsComponent";
-import ReviewerComponent from "./components/ReviewerComponent";
-
-const Container = styled.div`
-  justify-content: center;
-  border: 1px solid lightgray;
-  text-align: center;
-`
-
+import ReviewsDashboard from "./pages/ReviewsDashboard";
 
 function App() {
-  return (
-    <Container>
-        {
-            data["reviews"].map((review) => {
-              return <ReviewerComponent data = {review}></ReviewerComponent>
-            })
-        }
-    </Container>
-  )
+    return (
+      <ReviewsDashboard/>
+    )
 }
 
 export default App;
