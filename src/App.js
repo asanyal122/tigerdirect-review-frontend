@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import RatingComponent from "./components/RatingComponent";
+import data from "./static/data"
+import styled from "styled-components"
+import RatingsComponent from "./components/RatingsComponent";
+import ReviewerComponent from "./components/ReviewerComponent";
+
+const Container = styled.div`
+  justify-content: center;
+  border: 1px solid lightgray;
+  text-align: center;
+`
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container>
+        {
+            data["reviews"].map((review) => {
+              return <ReviewerComponent data = {review}></ReviewerComponent>
+            })
+        }
+    </Container>
+  )
 }
 
 export default App;
